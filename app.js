@@ -8,10 +8,18 @@ const p = document.querySelector('p.description');
 const button = document.querySelector('button.description');
 
 toggleList.addEventListener('click', () => {
+    if (listDiv.style.display == 'none') {
+        toggleList.textContent = 'Hide list'
+
+        listDiv.style.display = 'block';
+    } else {
+        toggleList.textContent = 'show list';
     listDiv.style.display = 'none';
+    }
 });
 
 button.addEventListener( 'click', () => {
+
     p.innerHTML= input.value + ';';
 });
 

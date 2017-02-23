@@ -9,8 +9,10 @@ const p = document.querySelector('p.description');
 const button = document.querySelector('button.description');
 
 button.addEventListener( 'click', () => {
-    p.textContent = input.value + ';';
+    p.innerHTML= input.value + ';';
 });
+
+p.title = "list description";
 
 
 

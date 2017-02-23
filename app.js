@@ -1,3 +1,20 @@
+
+
+
+
+
+
+const input =document.querySelector('input.description');
+const p = document.querySelector('p.description');
+const button = document.querySelector('button.description');
+
+button.addEventListener( 'click', () => {
+    p.textContent = input.value + ';';
+});
+
+
+
+
 const myList = document.getElementsByTagName('li');
 for (let i = 0 ; i < myList.length; i +=1) {
     myList[i].style.color = 'purple';

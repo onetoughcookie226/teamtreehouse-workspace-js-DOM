@@ -4,9 +4,9 @@ const listDiv = document.querySelector('.list');
 const descriptionInput =document.querySelector('input.description');
 const descriptionP = document.querySelector('p.description');
 const descriptionButton = document.querySelector('button.description');
-const addItemInput = document.querySelector('item.addItemInput');
-const addItemButton = document.querySelector('item.addItemButton');
-const removeItemButton = document.querySelector('item.removeItemButton');
+const addItemInput = document.querySelector('input.addItemInput');
+const addItemButton = document.querySelector('button.addItemButton');
+const removeItemButton = document.querySelector('button.removeItemButton');
 
 
 
@@ -58,14 +58,15 @@ addItemButton.addEventListener('click', () => {
     let ul = document.getElementsByTagName('ul')[0];
     let li = document.createElement('li');
     li.textContent = addItemInput.value;
-    // let li = document.querySelector('li: last-child');
+    // let li = document.querySelector('li:last-child');
     ul.appendChild(li);
 });
-//
-// removeItemButton.addEventListener('click', () => {
-//     let ul = document.getElementsByTagName('ul')[0];
-//     let li = document.createElement('li');
-//     li.textContent = addItemInput.value;
-//     ul.appendChild(li);
-//     // addItemInput.value = '';
-// });
+
+removeItemButton.addEventListener('click', () => {
+    console.log('hello');
+    let ul = document.getElementsByTagName('ul')[0];
+    let li = document.createElement('li');
+    li.textContent = removeItemButton.value;
+    ul.appendChild(li);
+    // addItemInput.value = '';
+});

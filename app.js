@@ -58,6 +58,7 @@ addItemButton.addEventListener('click', () => {
     let li = document.createElement('li');
     li.textContent = addItemInput.value;
     ul.appendChild(li);
+    addItemInput.value = '';
 });
 
 removeItemButton.addEventListener('click', () => {

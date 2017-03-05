@@ -8,8 +8,7 @@ const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 const removeItemButton = document.querySelector('button.removeItemButton');
 
-
-
+//click button and hide list
 toggleList.addEventListener('click', () => {
     if (listDiv.style.display == 'none') {
         toggleList.textContent = 'Hide list';
@@ -58,14 +57,14 @@ addItemButton.addEventListener('click', () => {
     let ul = document.getElementsByTagName('ul')[0];
     let li = document.createElement('li');
     li.textContent = addItemInput.value;
-    // let li = document.querySelector('li:last-child');
     ul.appendChild(li);
+    addItemInput.value = '';
 });
 
 removeItemButton.addEventListener('click', () => {
-    console.log('hello');
+    console.log("hello");
     let ul = document.getElementsByTagName('ul')[0];
-    let li = document.createElement('li');
+    let li = document.querySelector('li:last-child');
     li.textContent = removeItemButton.value;
     ul.appendChild(li);
     // addItemInput.value = '';

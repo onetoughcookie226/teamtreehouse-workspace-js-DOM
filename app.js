@@ -65,7 +65,5 @@ removeItemButton.addEventListener('click', () => {
     console.log("hello");
     let ul = document.getElementsByTagName('ul')[0];
     let li = document.querySelector('li:last-child');
-    li.textContent = removeItemButton.value;
-    ul.appendChild(li);
-    // addItemInput.value = '';
+    ul.removeChild(li);
 });

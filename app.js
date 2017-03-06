@@ -7,6 +7,16 @@ const descriptionButton = document.querySelector('button.description');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 const removeItemButton = document.querySelector('button.removeItemButton');
+const listItems = document.getElementsByTagName('li')[0];
+
+listItems.addEventListener('mouseover' , () => {
+    listItems.textContent = listItems.textContent.toUpperCase();
+});
+
+
+listItems.addEventListener('mouseout' , () => {
+    listItems.textContent = listItems.textContent.toLowerCase();
+});
 
 //click button and hide list
 toggleList.addEventListener('click', () => {

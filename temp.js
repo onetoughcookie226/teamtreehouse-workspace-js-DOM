@@ -3,12 +3,6 @@
  */
 
 
-// say ("Hello!");
-
-function exec(func, arg) {
-    func(arg);
-}
-
-exec((something) => {
+window.setTimeout((something) => {
     console.log(something);
-}, 'Greetings, everyone');
+} , 3000, 'Greetings, everyone');

@@ -9,14 +9,20 @@ const addItemButton = document.querySelector('button.addItemButton');
 const removeItemButton = document.querySelector('button.removeItemButton');
 const listItems = document.getElementsByTagName('li');
 
-for (let i = 0; i < listItems.length; i += 1) {
-    listItems[i].addEventListener('mouseover' , () => {
-        listItems[i].textContent = listItems[i].textContent.toUpperCase();
+
+// capitalize an item when we hover or mouse over it
+//change it back to lower case when the mouse moves off
+
+for ( let i = 0; i < listItems.length; i += 1) {
+    listItems[i].addEventListener('mouseover', () => {
+        listItems[i].textContent= listItems[i].textContent.toUpperCase();
     });
-    listItems[i].addEventListener('mouseout' , () => {
-        listItems[i].textContent = listItems[i].textContent.toLowerCase();
+
+    listItems[i].addEventListener('mouseout', () => {
+        listItems[i].textContent= listItems[i].textContent.toLowerCase();
     });
 }
+
 //click button and hide list
 toggleList.addEventListener('click', () => {
     if (listDiv.style.display == 'none') {

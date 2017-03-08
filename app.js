@@ -7,7 +7,7 @@ const descriptionButton = document.querySelector('button.description');
 const listUL = listDiv.querySelector('ul');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
-const removeItemButton = document.querySelector('button.removeItemButton');
+
 
 
 // capitalize an item when we hover or mouse over it
@@ -79,9 +79,4 @@ addItemButton.addEventListener('click', () => {
     ul.appendChild(li);
     addItemInput.value = '';
 });
-
-removeItemButton.addEventListener('click', () => {
-    let ul = document.getElementsByTagName('ul')[0];
-    let li = document.querySelector('li:last-child');
-    ul.removeChild(li);
-});
+s

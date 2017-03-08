@@ -4,6 +4,7 @@ const listDiv = document.querySelector('.list');
 const descriptionInput =document.querySelector('input.description');
 const descriptionP = document.querySelector('p.description');
 const descriptionButton = document.querySelector('button.description');
+const listUL = listDiv.querySelector('ul');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 const removeItemButton = document.querySelector('button.removeItemButton');
@@ -12,17 +13,15 @@ const removeItemButton = document.querySelector('button.removeItemButton');
 // capitalize an item when we hover or mouse over it
 //change it back to lower case when the mouse moves off
 
-listDiv.addEventListener('mouseover', (event) => {
-    if (event.target.tagName == "LI") {
-        event.target.textContent = event.target.textContent.toUpperCase();
+listUL.addEventListener('click', (event) => {
+    if (event.target.tagName == "BUTTON") {
+        let li =  event.target.parentNode;
+        let ul = li.parentNode;
+        ul.removeChild(li);
     }
 });
 
-listDiv.addEventListener('mouseout', (event) => {
-    if (event.target.tagName == "LI") {
-        event.target.textContent = event.target.textContent.toLowerCase();
-    }
-});
+
 
 // document.addEventListener('click',(event) => {
 //    console.log(event.target);

@@ -4,24 +4,34 @@ const listDiv = document.querySelector('.list');
 const descriptionInput =document.querySelector('input.description');
 const descriptionP = document.querySelector('p.description');
 const descriptionButton = document.querySelector('button.description');
+const listUL = listDiv.querySelector('ul');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
-const removeItemButton = document.querySelector('button.removeItemButton');
-const listItems = document.getElementsByTagName('li');
 
+listUL.addEventListener('click', (event) => {
 
-// capitalize an item when we hover or mouse over it
-//change it back to lower case when the mouse moves off
+    if (event.target.tagName == "BUTTON") {
+        if (event.target.className == 'remove') {
+            let li = event.target.parentNode;
+            let ul = li.parentNode;
+            ul.removeChild(li);
+        }
 
-for ( let i = 0; i < listItems.length; i += 1) {
-    listItems[i].addEventListener('mouseover', () => {
-        listItems[i].textContent= listItems[i].textContent.toUpperCase();
+        if (event.target.className == 'up') {
+            let li = event.target.parentNode;
+            let prevLi = li.previousElementSibling;
+            let ul = li.parentNode;
+            ul.insertBefore(li, prevLi);
+        }
+    }
+
     });
 
-    listItems[i].addEventListener('mouseout', () => {
-        listItems[i].textContent= listItems[i].textContent.toLowerCase();
-    });
-}
+
+
+// document.addEventListener('click',(event) => {
+//    console.log(event.target);
+// });
 
 //click button and hide list
 toggleList.addEventListener('click', () => {
@@ -30,7 +40,7 @@ toggleList.addEventListener('click', () => {
         listDiv.style.display = 'block';
     } else {
         toggleList.textContent = 'show list';
-    listDiv.style.display = 'none';
+        listDiv.style.display = 'none';
     }
 });
 
@@ -48,15 +58,15 @@ for (let i = 0 ; i < myList.length; i +=1) {
 }
 
 
-const errorNotPurple = document.querySelectorAll('.error-not-purple');
-for (let i = 0 ; i < errorNotPurple.length; i +=1) {
-    errorNotPurple[i].style.color = 'red';
-}
-
-const evens = document.querySelectorAll('li:nth-child(odd)');
-for (let i = 0 ; i < evens.length; i +=1) {
-    evens[i].style.backgroundColor = 'white';
-}
+// const errorNotPurple = document.querySelectorAll('.error-not-purple');
+// for (let i = 0 ; i < errorNotPurple.length; i +=1) {
+//     errorNotPurple[i].style.color = 'red';
+// }
+//
+// const evens = document.querySelectorAll('li:nth-child(odd)');
+// for (let i = 0 ; i < evens.length; i +=1) {
+//     evens[i].style.backgroundColor = 'white';
+// }
 
 const myHeading = document.getElementById('myHeading');
 const myButton = document.getElementById('myButton');
@@ -74,11 +84,4 @@ addItemButton.addEventListener('click', () => {
     li.textContent = addItemInput.value;
     ul.appendChild(li);
     addItemInput.value = '';
-});
-
-removeItemButton.addEventListener('click', () => {
-    console.log("hello");
-    let ul = document.getElementsByTagName('ul')[0];
-    let li = document.querySelector('li:last-child');
-    ul.removeChild(li);
 });

@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <link rel="stylesheet" href="CSS/style.css">
     <title>paint</title>
 </head>
@@ -22,22 +25,36 @@
         <input class="description" type="text">
         <button class="description">Change list description</button>
         <ul>
-            <li>fire trucks</li>
-            <li>lavender</li>
-            <li>grapes</li>
-            <li class="error-not-purple">oranges</li>
-            <li class="error-not-purple">snow</li>
-            <li>plums</li>
-            <li>amethyst</li>
+            <li>fire trucks
+                <button class="up">Up</button>
+                <button class="remove">Remove</button>
+            </li>
+            <li>lavender
+                <button class="up">Up</button>
+                <button class="remove">Remove</button>
+            </li>
+            <li>grapes
+                <button class="up">Up</button>
+                <button class="remove">Remove</button>
+            </li>
+            <!--<li class="error-not-purple">oranges<button>Remove</button></li>-->
+            <!--<li class="error-not-purple">snow<button>Remove</button></li>-->
+            <li>plums
+                <button class="up">Up</button>
+                <button class="remove">Remove</button>
+            </li>
+            <li>amethyst
+                <button class="up">Up</button>
+                <button class="remove">Remove</button>
+            </li>
         </ul>
         <input class="addItemInput" type="text">
         <button class="addItemButton">Add item</button>
-        <button class="removeItemButton">Remove last item</button>
     </div>
 </div>
 <footer>
     <script src="app.js"></script>
-    <script src="temp.js"></script>
+    <!--<script src="temp.js"></script>-->
     <div class="nav-bar">
         <a href="index.html">Home</a>
         <a href="../Blog/index.html">Blog</a>

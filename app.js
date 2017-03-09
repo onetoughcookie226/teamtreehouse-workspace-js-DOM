@@ -8,18 +8,25 @@ const listUL = listDiv.querySelector('ul');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 
-
-
-// capitalize an item when we hover or mouse over it
-//change it back to lower case when the mouse moves off
-
 listUL.addEventListener('click', (event) => {
+
     if (event.target.tagName == "BUTTON") {
-        let li =  event.target.parentNode;
-        let ul = li.parentNode;
-        ul.removeChild(li);
+        if (event.target.className == 'remove') {
+            let li = event.target.parentNode;
+            let ul = li.parentNode;
+            ul.removeChild(li);
+        }
+
+        if (event.target.className == 'up') {
+            let li = event.target.parentNode;
+            let prevLi = li.previousSibling;
+            let ul = li.parentNode;
+            ul.insertBefore(li, prevLi);
+
+        }
     }
-});
+
+    });
 
 
 
@@ -34,7 +41,7 @@ toggleList.addEventListener('click', () => {
         listDiv.style.display = 'block';
     } else {
         toggleList.textContent = 'show list';
-    listDiv.style.display = 'none';
+        listDiv.style.display = 'none';
     }
 });
 
@@ -52,15 +59,15 @@ for (let i = 0 ; i < myList.length; i +=1) {
 }
 
 
-const errorNotPurple = document.querySelectorAll('.error-not-purple');
-for (let i = 0 ; i < errorNotPurple.length; i +=1) {
-    errorNotPurple[i].style.color = 'red';
-}
-
-const evens = document.querySelectorAll('li:nth-child(odd)');
-for (let i = 0 ; i < evens.length; i +=1) {
-    evens[i].style.backgroundColor = 'white';
-}
+// const errorNotPurple = document.querySelectorAll('.error-not-purple');
+// for (let i = 0 ; i < errorNotPurple.length; i +=1) {
+//     errorNotPurple[i].style.color = 'red';
+// }
+//
+// const evens = document.querySelectorAll('li:nth-child(odd)');
+// for (let i = 0 ; i < evens.length; i +=1) {
+//     evens[i].style.backgroundColor = 'white';
+// }
 
 const myHeading = document.getElementById('myHeading');
 const myButton = document.getElementById('myButton');
@@ -79,4 +86,3 @@ addItemButton.addEventListener('click', () => {
     ul.appendChild(li);
     addItemInput.value = '';
 });
-s

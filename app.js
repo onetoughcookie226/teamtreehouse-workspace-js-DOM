@@ -19,10 +19,9 @@ listUL.addEventListener('click', (event) => {
 
         if (event.target.className == 'up') {
             let li = event.target.parentNode;
-            let prevLi = li.previousSibling;
+            let prevLi = li.previousElementSibling;
             let ul = li.parentNode;
             ul.insertBefore(li, prevLi);
-
         }
     }
 

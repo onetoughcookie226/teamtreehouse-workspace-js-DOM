@@ -7,6 +7,7 @@ const descriptionButton = document.querySelector('button.description');
 const listUL = listDiv.querySelector('ul');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
+const lis = listUL.children;
 
 function attachListItemButtons (li) {
     let up = document.createElement('button');
@@ -24,6 +25,11 @@ function attachListItemButtons (li) {
    remove.textContent = 'Remove';
     li.appendChild(remove);
 
+}
+
+
+for (let i = 0 ; i < lis.length; i += 1) {
+    attachListItemButtons(lis[i]);
 }
 
 listUL.addEventListener('click', (event) => {
@@ -106,7 +112,6 @@ myButton.addEventListener('click', () => {
 });
 
 // appending element
-
 addItemButton.addEventListener('click', () => {
     let ul = document.getElementsByTagName('ul')[0];
     let li = document.createElement('li');
